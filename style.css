@@ -48,24 +48,37 @@ table {
 }
 
 /* my styling */
+:root {
+    --text-margin: 5vw;
+}
+
 body {
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+    height: 100vh;
 }
 
 .left-panel {
-    flex: 1 0 40%
+    flex: 1 0 40%;
+    background-image: url("ocean.jpg");
+    background-position:left;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .right-panel {
-    flex: 1 0 60%
+    flex: 1 0 60%;
 }
 
 .user-input-section {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: aquamarine;
+    background-color: rgb(200, 233, 255);
+    box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.3);
 }
 
 .form-row {
@@ -75,7 +88,25 @@ body {
 .form-input {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 20px 20px 20px var(--text-margin);
+}
+
+.title-card {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.title-card > svg {
+    height: 10vw;
+    color: white;
+}
+
+.title-card > p {
+    font-size: 5vw; 
+    margin-left: 1vw;
 }
 
 label {
@@ -90,7 +121,7 @@ button {
 }
 
 .user-submission-section {
-    margin: 20px;
+    margin: 20px 20px 20px var(--text-margin);
 }
 
 h2 {
@@ -108,15 +139,43 @@ h3 {
 }
 
 .h2-text {
-    margin: 0px 10vw 2vh 20px;
+    margin: 0px 10vw 2vh var(--text-margin);
 }
 
 .header-text {
-    margin: 15vh 10vw 2vh 20px;
+    margin: 15vh 10vw 2vh var(--text-margin);
 }
+
 /* label, input {
     display:block;
     margin: max(2vw, 1vh);
 } */
 
+.check {
+    color: purple;
+    font-weight: bold;
+}
 
+.check-pass {
+    color: rgb(0, 124, 128);
+    font-weight: bold;
+}
+
+.confirm-password-invalid {
+    margin-top: 10px;
+    color: purple;
+}
+
+.password-invalid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.invalid-input {
+    background-color: rgb(255, 226, 226)
+}
+
+#invalid-email {
+    margin-top: 5px;
+}

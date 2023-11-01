@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="left-panel">
-        before
+        <!-- <img src="ocean.jpg" alt="Image of the ocean" class="left-panel-image"> -->
+        <div class="title-card"> 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path stroke="currentColor"  d="m120-420 320-460v460H120Zm153-80h87v-125l-87 125Zm227 80q12-28 26-98t14-142q0-72-13.5-148T500-920q61 18 121.5 67t109 117q48.5 68 79 149.5T840-420H500Zm104-80h148q-17-77-55.5-141T615-750q2 21 3.5 43.5T620-660q0 47-4.5 87T604-500ZM360-200q-36 0-67-17t-53-43q-14 15-30.5 28T173-211q-35-26-59.5-64.5T80-360h800q-9 46-33.5 84.5T787-211q-20-8-36.5-21T720-260q-23 26-53.5 43T600-200q-36 0-67-17t-53-43q-22 26-53 43t-67 17ZM80-40v-80h40q32 0 62.5-10t57.5-30q27 20 57.5 29.5T360-121q32 0 62-9.5t58-29.5q27 20 57.5 29.5T600-121q32 0 62-9.5t58-29.5q28 20 58 30t62 10h40v80h-40q-31 0-61-7.5T720-70q-29 15-59 22.5T600-40q-31 0-61-7.5T480-70q-29 15-59 22.5T360-40q-31 0-61-7.5T240-70q-29 15-59 22.5T120-40H80Zm280-460Zm244 0Z" fill="currentColor"/>
+            </svg>
+            <p>The Big Save</p>
+        </div>
+        <div class="title-card-bottom"></div>
     </div>
     <div class="right-panel">
         <div class="intro">
@@ -16,7 +23,7 @@
             This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <i>now</i> to get started.
         </h2>
         <h2 class="h2-text">
-            you <i>know</i> you want to.
+            You <i>know</i> you want to.
         </h2>
         </div>
         <div class="sign-up-form">
@@ -26,36 +33,43 @@
                     <div class="form-top-row form-row">
                         <div class="form-first-name form-input">
                             <label for="first-name">FIRST NAME</label>
-                            <input type="text" name="userFirstName" id="first-name">
+                            <input type="text" name="userFirstName" id="first-name" required>
                         </div>
                         <div class="form-last-name form-input">
                             <label for="last-name">LAST NAME</label>
-                            <input type="text" name="userLastName" id="last-name">
+                            <input type="text" name="userLastName" id="last-name" required>
                         </div>
                     </div>
                     <div class="form-middle-row form-row">
                         <div class="form-input">
                             <label for="email">EMAIL</label>
-                            <input type="email" name="userEmail" id="email">
+                            <input type="email" name="userEmail" id="email" required>
+                            <p id="invalid-email"></p>
                         </div>
                         <div class="form-input">
                             <label for="phone-number">PHONE NUMBER</label>
-                            <input type="number" name="userPhoneNumber" id="phone-number">
+                            <input type="tel" name="userPhoneNumber" id="phone-number" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="1234567890" maxlength="10" minlength="10">
                         </div>
                     </div>
                     <div class="form-bottom-row form-row">
                         <div class="form-input">
                             <label for="password">PASSWORD</label>
                             <input type="password" name="userPassword" id="password">
+                            <p class="error-input password-invalid">
+                                <div class="valid-text"><span class="validate-length check">X</span>&nbsp;Minimum 8 characters</div>
+                                <div class="valid-text"><span class="validate-number check">X</span>&nbsp;At least one number</div>
+                                <div class="valid-text"><span class="validate-letter check">X</span>&nbsp;At least one character</div>
+                            </p>
                         </div>
                         <div class="form-input">
                             <label for="confirm-password">CONFIRM PASSWORD</label>
                             <input type="password" name="userConfirmPassword" id="confirm-password">
+                            <p class="error-input confirm-password-invalid"></p>
                         </div>
                     </div>
                 </div>
                 <div class="user-submission-section">
-                    <button type="submit">Create Account</button>
+                    <button type="button">Create Account</button>
                     <h3 class="log-in-line">Already have an account? <a class="log-in-link" href="">Log in</a></h3>
                 </div>
             </form>
